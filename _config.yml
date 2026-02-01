@@ -1,7 +1,8 @@
 ### Site Settings ###
 remote_theme: "yousinix/portfolYOU"
+favicon: /assets/images/favicon.ico
 title: "Oguzhan Daskaya"
-description: "Just a guy trying to become a Software Developer"
+description: "A man never going to stop learning"
 baseurl: ""
 repository: "ozhan77/ozhan77.github.io"
 open_new_tab: true
