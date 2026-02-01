@@ -1,6 +1,6 @@
 ### Site Settings ###
 remote_theme: "yousinix/portfolYOU"
-title: "El_Isra's website"
+title: "Oguzhan Daskaya"
 description: "Just a guy trying to become a Software Developer"
 baseurl: ""
 repository: "ozhan77/ozhan77.github.io"
@@ -19,12 +19,9 @@ author:
   name: Oğuzhan Daşkaya
   image: https://github.com/israpps.png
   email: oguzhandky@gmail.com
-  facebook: Matias Israelson
   github: ozhan77
-#  linkedin: your_username
-  paypal: ElisraPS2
+  linkedin: oguzhan-daskaya
   psxplace: members/el_isra.59064/
-  discordserver: PS2Space
 
 
 ### Posts ###
@@ -42,7 +39,7 @@ collections:
 
 
 disqus:
-  shortname: ElIsraWebsite
+  shortname: oguzhan
 
 
 ### Analytics ###
