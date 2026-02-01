@@ -3,7 +3,7 @@ remote_theme: "yousinix/portfolYOU"
 title: "El_Isra's website"
 description: "Just a guy trying to become a Software Developer"
 baseurl: ""
-repository: "israpps/israpps.github.io"
+repository: "ozhan77/ozhan77.github.io"
 open_new_tab: true
 
 plugins:
@@ -16,17 +16,12 @@ nav_exclude:
   - documentation/partials/**
 
 author:
-  name: Matias Israelson
+  name: Oğuzhan Daşkaya
   image: https://github.com/israpps.png
-  email: israelson-matias@hotmail.com
+  email: oguzhandky@gmail.com
   facebook: Matias Israelson
-  github: israpps
-# instagram : your_username
+  github: ozhan77
 #  linkedin: your_username
-#  medium: your_username
-  twitch: el_isra___
-  twitter: El_Isra_a
-  youtube: El_IsraPS2
   paypal: ElisraPS2
   psxplace: members/el_isra.59064/
   discordserver: PS2Space
