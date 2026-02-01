@@ -1,6 +1,6 @@
 ### Site Settings ###
 remote_theme: "yousinix/portfolYOU"
-favicon: /assets/images/favicon.ico
+favicon: /assets/favicon.png
 title: "Oguzhan Daskaya"
 description: "A man never going to stop learning"
 baseurl: ""
