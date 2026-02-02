@@ -85,3 +85,7 @@ exclude:
   - CONTRIBUTING.md
   - LICENSE
   - "*.log"
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
