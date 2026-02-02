@@ -1,7 +1,6 @@
 ### Site Settings ###
 remote_theme: "yousinix/portfolYOU"
-favicon: "/assets/favicon.png"
-title: "Oguzhan Daskaya"
+title: "Oğuzhan Daşkaya"
 description: "A man never going to stop learning"
 baseurl: ""
 repository: "ozhan77/ozhan77.github.io"
