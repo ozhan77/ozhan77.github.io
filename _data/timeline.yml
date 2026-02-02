@@ -1,17 +1,56 @@
-- title: Student, Harvard CS
-  from: 2014
-  to: 2018
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-               reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+- title: English Project Support Specialist, Teknim, Istanbul
+  from: 2024
+  to: 2025
+  description: Provided technical support in English
+Explained how to use fire alarm systems
+Provided technical support in English
+Helped installers connect fire detectors to fire alarm panels
+Attended exhibitions to introduce company products in Turkey and abroad
+Assisted visitors by explaining product features
 
-- title: Software Engineer, Google, UK
-  from: 2018
-  to: present
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-               reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+- title: Software Developer, Commerclab, Istanbul
+  from: 2021
+  to: 2023
+  description: Conducted front-end development and adjustments for clients websites.
+Utilized Jenkins and Kubernetes to test and deploy team members developments on the testing platform and live environment.
+Created and optimized SQL queries and stored procedures for reports on sales, products, and inventory panels.
+Assisted clients in resolving issues with product prices front-end and stock transfers from ERP systems to marketplaces.
+Diagnosed and resolved database and Hangfire job issues causing transfer failures.
+Checked payment gateway logs to determine why customers from call centers could not complete orders, including analyzing error messages returned from banks.
+Used Postman to verify responses from shipping and marketplace company servers.
+Identified causes preventing warehouse personnel from obtaining shipping labels for orders.
+Investigated and resolved issues related to non-visible products on the PLP page during transfers by checking MSSQL, MongoDB, and Redis databases.
+
+
+- title: IT Technician, Narpos, Istanbul
+  from: 2021
+  to: 2021
+  description: Set up computers for stores and shopping centers
+Installed the company application on customer computers
+Checked systems to make sure they worked properly
+
+- title: Junior Software Developer, F1 Media, Istanbul
+  from: 2019
+  to: 2021
+  description: I developed an automated bot using Selenium to like and share posts.
+Created and launched a technology news website, overseeing all aspects of development and design.
+Conducted thorough research to produce accurate and engaging articles on the latest technology trends and innovations.
+Managed website content, ensuring timely updates and high-quality information for readers.
+Utilized SEO best practices to enhance website visibility and drive organic traffic
+
+
+- title: Software Developer Intern, Mobillium, Istanbul
+  from: 2017
+  to: 2017
+  description: Developed an Android application as part of the internship
+Supported the development process by testing and fixing basic issues
+Observed the development of the Papara mobile application by experienced developers
+
+- title: PCB Technician, Amstrad, Istanbul
+  from: 2009
+  to: 2012
+  description: Placed electronic components on PCB boards
+Checked boards after the solder oven for visual quality
+Fixed soldering problems when needed
+Removed defective components from PCBs using a solder pot
+Ensured products met quality standards
