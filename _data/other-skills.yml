@@ -1,7 +1,7 @@
-- name: Adobe Photoshop
+- name: Soldering
   percentage: 95
   color: info
 
-- name: Adobe Illustrator
+- name: Computer Hardware
   percentage: 90
   color: success
