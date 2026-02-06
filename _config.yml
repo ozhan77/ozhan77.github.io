@@ -1,7 +1,7 @@
 ### Site Settings ###
 remote_theme: "yousinix/portfolYOU"
 title: "Oğuzhan Daşkaya"
-description: "A man never going to stop learning"
+description: "Always a student of the craft"
 baseurl: ""
 repository: "ozhan77/ozhan77.github.io"
 open_new_tab: true
@@ -17,7 +17,7 @@ nav_exclude:
 
 author:
   name: Oğuzhan Daşkaya
-  image: https://avatars.githubusercontent.com/u/66035997?s=400&u=a79dda5a831bb383bdc85c1dbafebab215a25372&v=4
+  image: https://github.com/ozhan77/ozhan77.github.io/blob/main/assets/RO-1178.JPG?raw=true
   email: oguzhandky@gmail.com
   github: ozhan77
   linkedin: oguzhan-daskaya
