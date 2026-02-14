@@ -5,7 +5,15 @@
         <div class="content">
           <h2>{{ item.title }}</h2>
           <h6 class="date">{{ item.from }} — {{ item.to }}</h6>
-          <p>{{ item.description }}</p>
+          
+          {% if item.description %}
+            <ul class="timeline-list" style="list-style-type: disc; margin-left: 20px;">
+              {% for point in item.description %}
+                <li>{{ point }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          
         </div>
       </div>
     {% endfor %}
