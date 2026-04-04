@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irregular Verbs Practice</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(180deg, #eaf6f2 0%, #f5f8fb 100%);
+            color: #22333b;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255,255,255,0.88);
+            border-radius: 24px;
+            box-shadow: 0 24px 50px rgba(34, 51, 59, 0.12);
+            padding: 30px 24px 36px;
+            margin-top: 24px;
+        }
+        h1 {
+            margin-bottom: 12px;
+            color: #1f5f5b;
+        }
+        #stats {
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(71, 139, 128, 0.16);
+            border-radius: 18px;
+            padding: 18px 22px;
+            box-shadow: 0 10px 22px rgba(34, 51, 59, 0.08);
+        }
+        .stats-summary {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex: 1;
+        }
+        .stats-item {
+            text-align: center;
+            min-width: 110px;
+            padding: 12px 14px;
+            border-radius: 16px;
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.8);
+        }
+        .stats-correct {
+            background: #e3f8e8;
+            border: 1px solid rgba(34, 139, 34, 0.16);
+        }
+        .stats-incorrect {
+            background: #ffe5e5;
+            border: 1px solid rgba(220, 20, 60, 0.16);
+        }
+        .stats-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1f5f5b;
+        }
+        .stats-label {
+            font-size: 13px;
+            color: #5b7f7b;
+            margin-top: 4px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .stats-timer {
+            min-width: 100px;
+            padding: 14px 18px;
+            background: rgba(232, 248, 244, 0.95);
+            border-color: rgba(53, 110, 101, 0.16);
+        }
+        #question {
+            background: #ffffff;
+            border: 1px solid rgba(50, 117, 113, 0.18);
+            border-radius: 24px;
+            padding: 28px 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 16px 38px rgba(43, 104, 99, 0.08);
+        }
+        #question-text {
+            font-size: 32px;
+            margin-bottom: 18px;
+            color: #194f4b;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+        input {
+            width: calc(100% - 44px);
+            max-width: 520px;
+            padding: 14px 16px;
+            margin: 0 auto;
+            font-size: 16px;
+            border: 1px solid #c7e4e2;
+            border-radius: 14px;
+            outline: none;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.06);
+        }
+        input:focus {
+            border-color: #83c7c2;
+            background: #ffffff;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 14px;
+            border: none;
+            background: #4a8f87;
+            color: #ffffff;
+            transition: transform 0.16s ease, background 0.16s ease;
+            margin-top: 14px;
+        }
+        button:hover {
+            transform: translateY(-1px);
+            background: #3f7a73;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            min-height: 36px;
+            border-radius: 16px;
+            padding: 14px 16px;
+            background: rgba(255,255,255,0.92);
+            border: 1px solid rgba(65,121,111,0.16);
+        }
+        .result-success {
+            color: #1c6b55;
+            background: rgba(210,247,231,0.88);
+            border-color: rgba(28,107,85,0.22);
+        }
+        .result-error {
+            color: #8a3e2f;
+            background: rgba(255,226,222,0.92);
+            border-color: rgba(138,62,47,0.24);
+        }
+        #wrong-answers {
+            margin-top: 28px;
+            text-align: left;
+            background: rgba(250,255,255,0.96);
+            padding: 22px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(47,114,108,0.12);
+        }
+        #wrong-answers h2 {
+            margin-top: 0;
+            color: #255a54;
+            text-align: center;
+        }
+        #wrong-answers ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        #wrong-answers li {
+            border: 1px solid rgba(37,90,84,0.14);
+            background: rgba(237,251,250,0.95);
+            border-radius: 16px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+            color: #213c3d;
+        }
+        #wrong-answers li span {
+            display: inline-block;
+            font-weight: 600;
+            margin-left: 8px;
+            color: #3a6663;
+        }
+        #final-stats {
+            margin-top: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Irregular Verbs Practice</h1>
+        <div id="stats">
+            <div class="stats-summary">
+                <div class="stats-item stats-correct">
+                    <div class="stats-number" id="correct-count">0</div>
+                    <div class="stats-label">Correct</div>
+                </div>
+                <div class="stats-item stats-incorrect">
+                    <div class="stats-number" id="incorrect-count">0</div>
+                    <div class="stats-label">Incorrect</div>
+                </div>
+            </div>
+            <div class="stats-item stats-timer">
+                <div class="stats-number" id="timer">00:00</div>
+                <div class="stats-label">Time</div>
+            </div>
+        </div>
+        <div id="question">
+            <p id="question-text"></p>
+            <input type="text" id="answer-input" placeholder="Your answer" autofocus>
+        </div>
+        <div id="result" class="result"></div>
+        <div id="wrong-answers" class="result">
+            <h2>Wrong Answers</h2>
+            <ul id="wrong-list"></ul>
+        </div>
+        <div id="final-stats" style="display: none;">
+            <h2>Practice Complete!</h2>
+            <p>Total Correct: <span id="final-correct"></span></p>
+            <p>Total Incorrect: <span id="final-incorrect"></span></p>
+            <p>Total Time: <span id="final-time"></span></p>
+            <button id="restart-btn">Restart</button>
+        </div>
+    </div>
+
+    <script>
+        const irregularVerbs = {
+            "go": ["went", "gone"],
+            "eat": ["ate", "eaten"],
+            "run": ["ran", "run"],
+            "see": ["saw", "seen"],
+            "come": ["came", "come"],
+            "take": ["took", "taken"],
+            "give": ["gave", "given"],
+            "make": ["made", "made"],
+            "know": ["knew", "known"],
+            "think": ["thought", "thought"],
+            "say": ["said", "said"],
+            "get": ["got", "gotten"],
+            "find": ["found", "found"],
+            "tell": ["told", "told"],
+            "become": ["became", "become"],
+            "show": ["showed", "shown"],
+            "leave": ["left", "left"],
+            "feel": ["felt", "felt"],
+            "put": ["put", "put"],
+            "bring": ["brought", "brought"],
+            "begin": ["began", "begun"],
+            "keep": ["kept", "kept"],
+            "hold": ["held", "held"],
+            "write": ["wrote", "written"],
+            "stand": ["stood", "stood"],
+            "hear": ["heard", "heard"],
+            "let": ["let", "let"],
+            "set": ["set", "set"],
+            "meet": ["met", "met"],
+            "pay": ["paid", "paid"],
+            "sit": ["sat", "sat"],
+            "speak": ["spoke", "spoken"],
+            "lie": ["lay", "lain"],
+            "lead": ["led", "led"],
+            "read": ["read", "read"],
+            "grow": ["grew", "grown"],
+            "lose": ["lost", "lost"],
+            "fall": ["fell", "fallen"],
+            "send": ["sent", "sent"],
+            "build": ["built", "built"],
+            "understand": ["understood", "understood"],
+            "draw": ["drew", "drawn"],
+            "break": ["broke", "broken"],
+            "spend": ["spent", "spent"],
+            "cut": ["cut", "cut"],
+            "rise": ["rose", "risen"],
+            "drive": ["drove", "driven"],
+            "buy": ["bought", "bought"],
+            "wear": ["wore", "worn"],
+            "choose": ["chose", "chosen"],
+            "be": ["was", "been"],
+            "have": ["had", "had"],
+            "do": ["did", "done"],
+            "fly": ["flew", "flown"],
+            "drink": ["drank", "drunk"],
+            "sing": ["sang", "sung"],
+            "swim": ["swam", "swum"],
+            "ride": ["rode", "ridden"],
+            "sleep": ["slept", "slept"],
+            "wake": ["woke", "woken"],
+            "forget": ["forgot", "forgotten"],
+            "forgive": ["forgave", "forgiven"],
+            "hide": ["hid", "hidden"],
+            "hit": ["hit", "hit"],
+            "hurt": ["hurt", "hurt"],
+            "shut": ["shut", "shut"],
+            "teach": ["taught", "taught"],
+            "throw": ["threw", "thrown"],
+            "win": ["won", "won"],
+            "catch": ["caught", "caught"],
+            "fight": ["fought", "fought"],
+            "sell": ["sold", "sold"],
+            "lend": ["lent", "lent"],
+            "learn": ["learnt", "learnt"],
+            "burn": ["burnt", "burnt"],
+            "dream": ["dreamt", "dreamt"],
+            "smell": ["smelt", "smelt"],
+            "spell": ["spelt", "spelt"],
+            "spoil": ["spoilt", "spoilt"],
+            "blow": ["blew", "blown"]
+        };
+
+        let currentV1 = '';
+        let currentForm = '';
+        let correctCount = 0;
+        let incorrectCount = 0;
+        let timerSeconds = 0;
+        let timerInterval = null;
+        let remainingVerbs = [];
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        }
+
+        function updateStats() {
+            document.getElementById('correct-count').innerText = correctCount;
+            document.getElementById('incorrect-count').innerText = incorrectCount;
+            document.getElementById('timer').innerText = formatTime(timerSeconds);
+        }
+
+        function startTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+            timerInterval = setInterval(() => {
+                timerSeconds += 1;
+                document.getElementById('timer').innerText = formatTime(timerSeconds);
+            }, 1000);
+        }
+        function stopTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+        }
+
+        function addWrongAnswerToList(verb, form, answer, correct) {
+            const list = document.getElementById('wrong-list');
+            const item = document.createElement('li');
+            item.textContent = `${correct}=${answer || 'blank'}`;
+            list.insertBefore(item, list.firstChild);
+        }
+
+        function startPractice() {
+            if (remainingVerbs.length === 0) {
+                stopTimer();
+                document.getElementById('question-text').innerText = 'Practice complete!';
+                document.getElementById('answer-input').disabled = true;
+                document.getElementById('result').innerText = `Finished with ${correctCount} correct, ${incorrectCount} incorrect in ${formatTime(timerSeconds)}.`;
+                document.getElementById('result').className = 'result result-success';
+                document.getElementById('final-correct').innerText = correctCount;
+                document.getElementById('final-incorrect').innerText = incorrectCount;
+                document.getElementById('final-time').innerText = formatTime(timerSeconds);
+                document.getElementById('final-stats').style.display = 'block';
+                return;
+            }
+            const randomIndex = Math.floor(Math.random() * remainingVerbs.length);
+            currentV1 = remainingVerbs.splice(randomIndex, 1)[0];
+            const random = Math.random() < 0.5 ? 1 : 2;
+            currentForm = random === 1 ? 'past simple (V2)' : 'past participle (V3)';
+            const formLabel = currentForm === 'past simple (V2)' ? 'V2' : 'V3';
+            document.getElementById('question-text').innerText = `${currentV1.toUpperCase()} = (${formLabel})?`;
+            document.getElementById('answer-input').value = '';
+            document.getElementById('answer-input').disabled = false;
+            document.getElementById('result').innerText = '';
+            document.getElementById('result').className = 'result';
+            document.getElementById('answer-input').focus();
+        }
+
+        function showResult(message, isCorrect) {
+            const resultEl = document.getElementById('result');
+            resultEl.innerText = message;
+            resultEl.className = isCorrect ? 'result result-success' : 'result result-error';
+        }
+
+        function checkAnswer() {
+            const answer = document.getElementById('answer-input').value.trim().toLowerCase();
+            const correct = currentForm === 'past simple (V2)' ? irregularVerbs[currentV1][0] : irregularVerbs[currentV1][1];
+            if (answer === correct) {
+                correctCount += 1;
+                showResult('Correct! Answered: true', true);
+            } else {
+                incorrectCount += 1;
+                addWrongAnswerToList(currentV1, currentForm, answer, correct);
+                showResult(`Incorrect. Answered: false — correct is "${correct}".`, false);
+            }
+            updateStats();
+            setTimeout(startPractice, 1000);
+        }
+
+        document.getElementById('answer-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkAnswer();
+            }
+        });
+
+        window.onload = function() {
+            remainingVerbs = Object.keys(irregularVerbs);
+            startPractice();
+            startTimer();
+            updateStats();
+        };
+    </script>
+</body>
+</html>
